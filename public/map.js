@@ -169,26 +169,12 @@ function getValue(){
 }
 /**
 *@function mappingUserInput
-*@desc displaying User Input address on the draw Map, Mapbox
+*@desc displaying User Input adress on the draw Map, Mapbox
 */
 var inputMarker={};
-var combinedConvertedAddress = [];
 function mappingUserInput (convertedAdress){
-
-  if (combinedConvertedAddress.length == 0) {
-inputMarker.length=0;
-inputMarker =L.marker([convertedAdress[1], convertedAdress [0]], {}).addTo(basemap);
-console.log(inputMarker);
-combinedConvertedAddress[0] = [convertedAdress[1], convertedAdress [0]];
-console.log(combinedConvertedAddress);
-}
-
-else {
-  combinedConvertedAddress[0].setMap(null);
   inputMarker.length=0;
-  inputMarker =L.marker([convertedAdress[1], convertedAdress [0]], {}).addTo(basemap);
-  console.log(inputMarker);
-  combinedConvertedAddress [0] = [convertedAdress[1], convertedAdress [0]];
-}
+   inputMarker =L.marker([convertedAdress[1], convertedAdress [0]], {
 
+  }).addTo(basemap);
 }
