@@ -25,4 +25,8 @@ mongodb 3.5.8
 
 To execute the code, please install npm by using “npm install” in cmd/terminal.
 
-Now set the file path by the use of “cd” and the provided folder “Abgabe5”. After installation of npm, the other named packages and your mongodb database, execute “npm start”. Now the pages are available and ready to be used. Therefore, use http://localhost:3000 in your web browser.
+Now set the file path by the use of “cd” and the provided folder “Abgabe5”. After installation of npm, the other named packages and your mongodb database, execute “npm start”. 
+
+In addition, please make sure to insert your access tokens to the code. 
+
+Now the pages are available and ready to be used. Therefore, use http://localhost:3000 in your web browser.
