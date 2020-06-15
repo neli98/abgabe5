@@ -3,8 +3,11 @@
 
 # description of the functionality
 This is a client - server - database application.
+
 The given code provides two different webpages. Both webpages show information about the busstops in Münster.
+
 The first (and main-) page provides the opportunity to show the next busstop and the departure times of different buslines based on a given location. In fact, it provides a GET-functionality of information that is stored in a database.
+
 The second page provides the opportunity to CREATE, UPDATE and DELETE locations on which the calculations of the first page are based. This information is stored in a database.
 
 # installation
