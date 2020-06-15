@@ -28,7 +28,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     tileSize: 512,
     zoomOffset: -1,
 //#######please fill in your accessToken########################################
-    accessToken: 'pk.eyJ1IjoibWE5ZGFsZW44IiwiYSI6ImNrYTZ4ZGdqNDBibWUyeHBuN3JmN2lrdDcifQ.SgZHAThfZLyx2Avk3th2Lg'
+    accessToken: ''
      }).addTo(map);
 
 // creating a Toolbar on the Mapboxmap only option to set a marker
@@ -88,7 +88,7 @@ function geocoding(){
   var nr=document.getElementById('nr').value;
   var city=document.getElementById('city').value;
 //#####your accessToken#########################################################
-  var access_token="pk.eyJ1IjoibWE5ZGFsZW44IiwiYSI6ImNrYTZ4ZGdqNDBibWUyeHBuN3JmN2lrdDcifQ.SgZHAThfZLyx2Avk3th2Lg";
+  var access_token="";
 
   userLocationString= street+ ' '+nr+ ' ,'+city;
   var resource ="https://api.mapbox.com/geocoding/v5/mapbox.places/"+ street+ "%20"+ nr +"%20" + city +".json?country=DE&access_token="+access_token;
