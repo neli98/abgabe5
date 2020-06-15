@@ -12,11 +12,17 @@ The second page provides the opportunity to CREATE, UPDATE and DELETE locations 
 
 # installation
 To execute the provided code it is necessary to install the following:
+
 npm
+
 body-parser 1.19.0
+
 express 4.17.1
+
 jquery 3.5.1
+
 mongodb 3.5.8
 
 To execute the code, please install npm by using “npm install” in cmd/terminal.
+
 Now set the file path by the use of “cd” and the provided folder “Abgabe5”. After installation of npm, the other named packages and your mongodb database, execute “npm start”. Now the pages are available and ready to be used. Therefore, use http://localhost:3000 in your web browser.
