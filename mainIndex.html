@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Geosoft1 </title>
+        <header>
+          <h1>Exercise 5 - Mapping Busstops in Münster</h1>
+          <h2> by Cornelius Zerwas
+          </h2>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin="anonymous"/>
+          <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+          integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+          crossorigin="anonymous"></script>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+          <a href="linkedIndex.html">choose your Location</a>
+
+        </header>
+
+    </head>
+    <body>
+        <p id='errors'style='width: 25%' ></p>
+
+      <div id="interactive">
+
+        <form id="location" action="index.html" method="post">
+
+    <!--<button type='button' onclick="busstops()">show busstops</button><br/> -->
+
+        </form>
+      </div>
+      <div id="mapid" style= 'height: 400px' >
+        <!--; width: 75%'  align = 'center'-->
+
+      </div>
+
+
+      <div id="result">
+        <br/>
+        <p align="center" id="busstop"><p>
+        <table style="width:75%" align="center" id="resultTable" border="1">
+      <tr>
+
+        <th>Departure</td>
+        <th>Busline</td>
+        <th>Busdirection</td>
+      </tr>
+    </table></div>
+    <button type="button" onclick="showingDatabaseContent()">Database Content</button>
+    <button type="submit" onclick="getValue()">start Calculation</button>
+
+    <div id="test">
+      <ul id='ul'></ul>
+    </div>
+
+    <p align = 'center'><br/>Busstop-Information <br/>
+      </p>
+           <table id='resultJS' style ='width:75%' align='center' border="2">
+            <tr>
+                <th>Distance</th>
+                <th>Busstop</th>
+                <th>Direction</th>
+                <th>Orientation</th>
+
+              </tr>
+              <tbody align='center'>
+              <tr>
+                <td id="distance0"></td>
+                <td id="ID0"></td>
+                <td id="direction0"></td>
+                <td id="orientation0"></td>
+
+              </tr>
+              <tr>
+                <td id="distance1"></td>
+                <td id="ID1"></td>
+                <td id="direction1"></td>
+                <td id="orientation1"></td>
+
+              </tr>
+              <tr>
+                <td id="distance2"></td>
+                <td id="ID2"></td>
+                <td id="direction2"></td>
+                <td id="orientation2"></td>
+
+              </tr>
+              <tr>
+                <td id="distance3"></td>
+                <td id="ID3"></td>
+                <td id="direction3"></td>
+                <td id="orientation3"></td>
+
+              </tr>
+              <tr>
+                <td id="distance4"></td>
+                <td id="ID4"></td>
+                <td id="direction4"></td>
+                <td id="orientation4"></td>
+
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+      <div id= 'scripte'>
+
+        <script src="public/GeoJSON.js"></script>
+        <script src="public/script.js"></script>
+        <script src="public/map.js"></script>
+
+      </div>
+
+    </body>
+</html>

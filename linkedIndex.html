@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Geosoft1 </title>
+        <header>
+          <h1>Exercise 5 - Choose Your Location</h1>
+          <h2>by Cornelius Zerwas
+          </h2>
+          <a href="/">back to the Main Page</a>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin="anonymous"/>
+          <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+          integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+          crossorigin="anonymous"></script>
+          <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+          <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+          <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+        </header>
+    </head>
+    <body>
+
+      <label for='street'><strong>Street</strong> </br></label>
+      <input type='text' id='street' >
+
+      <br/> <br/><label for='nr'><strong>House number</strong></br></label>
+      <input type='number' id='nr' min='0' max='000'>
+
+      <br/> <br/><label for='city'><strong>City</strong> </br></label>
+      <input type='text' id='city' > <button type='button' onclick="geocoding()">Submit</button></br></br>
+
+
+
+      <button type='button' onclick="getLocation()">Browser Location</button> </br>
+
+      <br/><br/>
+      <div id="result"> </div>
+      <div id="userMap" style= 'height: 400px'></div>
+      <button type="button" onclick="showingDatabaseContent()">Show Database Content</button>
+      <br/><br/><div id="test"> <strong> Please select objects (multiple choice for deletion possible, only single choice for update), select operation and click "Show Database Content"-button afterwards </strong>
+        <ul id='ul'><br/></ul>
+      </div>
+
+      <button type="button" onclick="deleteItem()" >Delete <br/>one or multiple </button>
+      <button type="button" onclick="updateItem()">Update one set of <br/> coordinates</button>
+      <div id="updateTextarea"> </div>
+      <button id='updateButton' type="button" onclick="serverCall()">Submit</button>
+
+      <div id= 'scripte'>
+        <script src="public/GeoJSON.js"></script>
+        <script src="public/userMap.js"></script>
+      </div>
+
+
+    </body>
+</html>
