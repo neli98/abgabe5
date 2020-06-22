@@ -51,7 +51,10 @@ function statechangecallback() {
     console.log(pointCollection);
 
     if (document.getElementById('mapid')){
-    mappingBusstops();}
+    heatmap();
+    mappingBusstops();
+    addLayerControl ();
+  }
   }
 }
 

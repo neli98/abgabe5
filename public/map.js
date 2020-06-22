@@ -13,12 +13,14 @@
 
 //Creating Map with mapbox, center it to Münster
 //source: https://leafletjs.com/examples/quick-start/
-//######Please add your own access########
+//######Please add your own accessToken########
+
 
 var busstopInfos= [];
 var basemap = L.map('mapid', {
   center:[51.96225013358843,7.62451171875],
-  zoom:13});
+  zoom:13
+  });
 var data = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -26,8 +28,17 @@ var data = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
     tileSize: 512,
     zoomOffset: -1,
 //#######please fill in your accessToken########################################
-    accessToken: ''
+    accessToken: 'pk.eyJ1IjoibWE5ZGFsZW44IiwiYSI6ImNrYTZ4ZGdqNDBibWUyeHBuN3JmN2lrdDcifQ.SgZHAThfZLyx2Avk3th2Lg'
 }).addTo(basemap);
+
+/**var heat = L.heatLayer([
+	[50.5, 30.5, 0.2], // lat, lng, intensity
+	[50.6, 30.4, 0.5]
+], {radius: 25}).addTo(map);
+*/
+
+ // L.control.layers(overlay).addTo(basemap);
+
 
 /**
 *@function mappingBusstops
@@ -38,7 +49,7 @@ var data = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
 var allBusstops;
 function mappingBusstops(){
 
- allBusstops=L.geoJSON(JSON.parse(x.responseText),{
+ allBusstops = L.geoJSON(JSON.parse(x.responseText),{
   pointToLayer: function(features, latlng){
     return L.circle(latlng);
   },
@@ -50,6 +61,41 @@ function mappingBusstops(){
   }
 }).addTo(basemap).on('click', onClick); // eventlistener click on Circle event
 }
+
+
+/**
+*@function heatmap
+*@desc creates heatmap on the basemap
+*
+*/
+
+var heat;
+function heatmap() {
+createHeatArray();
+heat = L.heatLayer(test1, {radius: 25}).addTo(basemap);
+one = 1;
+}
+
+
+
+/**
+*@function createHeatArray
+*@desc creates array that contains the busstops in an array together with the intensity
+*
+*/
+var test1 = [];
+ function createHeatArray () {
+   var test = JSON.parse(x.responseText);
+   console.log(test);
+
+   for (var i = 0; i < test.features.length; i++) {
+
+     test1.push([test.features[i].geometry.coordinates[1],test.features[i].geometry.coordinates[0], 1.5]);
+   }
+   return test1;
+
+ }
+
 
 /**
 *@function onClick
@@ -177,4 +223,21 @@ function mappingUserInput (convertedAdress){
    inputMarker =L.marker([convertedAdress[1], convertedAdress [0]], {
 
   }).addTo(basemap);
+}
+
+
+/**
+*@function addLayerControl
+*@desc adds the layer control to the basemap
+*/
+
+function addLayerControl (){
+var baseLayers = {
+  //  "Basemap": basemap,
+};
+var overlays = {
+    "Busstops": allBusstops,
+    "Heat": heat
+};
+L.control.layers(baseLayers, overlays).addTo(basemap);
 }
