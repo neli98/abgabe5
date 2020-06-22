@@ -13,7 +13,10 @@
 
 //Creating Map with mapbox, center it to Münster
 //source: https://leafletjs.com/examples/quick-start/
-//######Please add your own accessToken########
+//######Please add your own access
+
+
+########
 
 
 var busstopInfos= [];
@@ -28,7 +31,7 @@ var data = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
     tileSize: 512,
     zoomOffset: -1,
 //#######please fill in your accessToken########################################
-    accessToken: 'pk.eyJ1IjoibWE5ZGFsZW44IiwiYSI6ImNrYTZ4ZGdqNDBibWUyeHBuN3JmN2lrdDcifQ.SgZHAThfZLyx2Avk3th2Lg'
+    accessToken: ''
 }).addTo(basemap);
 
 /**var heat = L.heatLayer([
